@@ -1,0 +1,40 @@
+body{
+    margin: unset !important;
+}
+#logo_img{
+    background-image: url('img/medeze-logo.png' );
+    margin-top: 5vh;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: contain, cover;
+    max-width: 7rem;
+}
+#bgTop{
+    background-image: url('img/background_fabric.png' ) ;
+    width: 100%;
+    height: 30vh;
+display: flex;
+justify-content: center;
+}
+#bgTop2{
+    background-color: #f8f9fe;
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-right: 5vh;
+    padding-left: 5vh;
+}
+#bgTop2 .container{
+    margin-top: -10vh ;
+
+}
+p{
+    color: rgb(189, 143, 63) ;
+}
+.container .container-fluid .headhead_Container1  h1{
+    font-size: 1.6275rem;
+    font-weight: 600;
+    line-height: 1.5;
+}
