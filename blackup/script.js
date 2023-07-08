@@ -1,100 +1,202 @@
 
 // ...........อายุ
+function calculateAge(birthday) {
+    var today = new Date(); //วันปัจจุบัน
+    var birthDate = new Date(birthday); //
+    var age = today.getFullYear() - birthDate.getFullYear();
+    return age;
+}
+
+document.getElementById("birthdaytime").addEventListener("change", function(event) {
+    var birthdayInput = event.target;
+    var age = calculateAge(birthdayInput.value);
+    document.getElementById("age_me").value = age + " ปี";
+});
+
+
+
+// ......
+
 form.addEventListener('submit', function (e) {
     e.preventDefault();
 
     const inputs = Array.from(document.querySelectorAll("#form input"));
-    const divs = Array.from(document.querySelectorAll("div"));
     
-    const selectElements = [
-        "company_job",
-        "employment_job",
-        "mr_mrs",
-        "blood_group",
-        "NATIONALITY",
-        "RELIGION",
-        "SERVICE",
-        "STATUS_Single",
-        "FATHER_status",
-        "MOTHER_status",
-        "EMERGENCY_mobile",
-        "khow_works",
-        "SPEAKING_eng",
-        "READING_eng",
-        "WRITING_eng",
-        "SPEAKING_thai",
-        "READING_thai",
-        "WRITING_thai",
-        "SPEAKING_chin",
-        "READING_chin",
-        "WRITING_chin",
-        "SPEAKING_OTHER",
-        "READING_OTHER",
-        "WRITING_other",
-        "COMPANY_Yes_no",
+    var selectElement = document.getElementById("company_job");
+    var employment_job = document.getElementById("employment_job");
+    var mr_mrs = document.getElementById("mr_mrs");
+    var blood_group = document.getElementById("blood_group");
+    var NATIONALITY = document.getElementById("NATIONALITY");   
+    var RELIGIONSEX = document.getElementById("RELIGION");
+    var SERVICE = document.getElementById("SERVICE");   
+    var STATUS_Single = document.getElementById("STATUS_Single");
+    var FATHER_status = document.getElementById("FATHER_status");
+    var MOTHER_status = document.getElementById("MOTHER_status");
+    var EMERGENCY_mobile = document.getElementById("EMERGENCY_mobile");
+    var khow_works = document.getElementById("khow_works");
+    var SPEAKING_eng = document.getElementById("SPEAKING_eng");
+    var READING_eng = document.getElementById("READING_eng");
+    var WRITING_eng = document.getElementById("WRITING_eng");
+    var SPEAKING_thai = document.getElementById("SPEAKING_thai");
+    var READING_thai = document.getElementById("READING_thai");
+    var WRITING_thai = document.getElementById("WRITING_thai");
+    var SPEAKING_chin = document.getElementById("SPEAKING_chin");
+    var READING_chin = document.getElementById("READING_chin");
+    var WRITING_chin = document.getElementById("WRITING_chin");
+    var SPEAKING_OTHER = document.getElementById("SPEAKING_OTHER");       
+    var READING_OTHER = document.getElementById("READING_OTHER");
+    var WRITING_other = document.getElementById("WRITING_other");
+    var COMPANY_Yes_no = document.getElementById("COMPANY_Yes_no");
 
-        "spouse_name",
-        "PHONE_spouse",
-        "APPLICATION",
-        "COMPANY_name",
-        "spouse_name_disabled",
-        "PHONE_spouse_disabled",
-        "APPLICATION_disabled",
-        "COMPANY_name_disabled",
-    ];
-    checkRequired(inputs , divs);
-    checkSele(selectElements);
+
+
+
+
+    checkRequired(inputs);
+    checkSele(selectElement, employment_job, mr_mrs, blood_group, NATIONALITY, RELIGIONSEX, SERVICE, STATUS_Single, FATHER_status, MOTHER_status,EMERGENCY_mobile,khow_works,SPEAKING_eng,READING_eng,WRITING_eng
+        ,SPEAKING_thai,READING_thai,WRITING_thai,SPEAKING_chin,READING_chin,WRITING_chin,SPEAKING_OTHER,READING_OTHER,WRITING_other,COMPANY_Yes_no);
 });
 
-function checkSele(selectElements) {
-    selectElements.forEach(function (elementId) {
-        const element = document.getElementById(elementId);
-        
-        if ( element.value === '1' ) {
-            element.style.borderColor = "#2ecc71";
-        }
-        if ( element.value === '0' ) {
-            element.style.borderColor = "var(--error-color)";
-        }
-        
-        
 
-        if (
-            element.id === "spouse_name_disabled" ||
-            element.id === "PHONE_spouse_disabled" ||
-            element.id === "APPLICATION_disabled" ||
-            element.id === "COMPANY_name_disabled"
-            ) {
-                element.style.borderColor = "";
-            }
-    });
+
+function checkSele(selectElement, employment_job, mr_mrs, blood_group, NATIONALITY, RELIGIONSEX, SERVICE, STATUS_Single, FATHER_status, MOTHER_status,EMERGENCY_mobile,khow_works,SPEAKING_eng,READING_eng,WRITING_eng
+    ,SPEAKING_thai,READING_thai,WRITING_thai,SPEAKING_chin,READING_chin,WRITING_chin,SPEAKING_OTHER,READING_OTHER,WRITING_other,COMPANY_Yes_no) {
+    if (selectElement.value.trim() === '0') {
+        selectElement.style.borderColor = "var(--error-color)";
+    } else {
+        selectElement.style.borderColor = "var(--succes-color)";
+    }
+
+    if (employment_job.value.trim() === '0') {
+        employment_job.style.borderColor = "var(--error-color)";
+    } else {
+        employment_job.style.borderColor = "var(--succes-color)";
+    }
+
+    if (mr_mrs.value.trim() === '0') {
+        mr_mrs.style.borderColor = "var(--error-color)";
+    } else {
+        mr_mrs.style.borderColor = "var(--succes-color)";
+    }
+
+    if (blood_group.value.trim() === '0') {
+        blood_group.style.borderColor = "var(--error-color)";
+    } else {
+        blood_group.style.borderColor = "var(--succes-color)";
+    }
+
+    if (NATIONALITY.value.trim() === '0') {
+        NATIONALITY.style.borderColor = "var(--error-color)";
+    } else {
+        NATIONALITY.style.borderColor = "var(--succes-color)";
+    }
+
+    if (RELIGIONSEX.value.trim() === '0') {
+        RELIGIONSEX.style.borderColor = "var(--error-color)";
+    } else {
+        RELIGIONSEX.style.borderColor = "var(--succes-color)";
+    }
+
+    if (SERVICE.value.trim() === '0') {
+        SERVICE.style.borderColor = "var(--error-color)";
+    } else {
+        SERVICE.style.borderColor = "var(--succes-color)";
+    }
+
+    if (STATUS_Single.value.trim() === '0') {
+        STATUS_Single.style.borderColor = "var(--error-color)";
+    } else {
+        STATUS_Single.style.borderColor = "var(--succes-color)";
+    }
+
+    if (FATHER_status.value.trim() === '0') {
+        FATHER_status.style.borderColor = "var(--error-color)";
+    } else {
+        FATHER_status.style.borderColor = "var(--succes-color)";
+    }
+
+    if (MOTHER_status.value.trim() === '0') {
+        MOTHER_status.style.borderColor = "var(--error-color)";
+    } else {
+        MOTHER_status.style.borderColor = "var(--succes-color)";
+    }
+    if (EMERGENCY_mobile.value.trim() === '0') {
+        EMERGENCY_mobile.style.borderColor = "var(--error-color)";
+    } else {
+        EMERGENCY_mobile.style.borderColor = "var(--succes-color)";
+    }
+    if (khow_works.value.trim() === '0') {
+        khow_works.style.borderColor = "var(--error-color)";
+    } else {
+        khow_works.style.borderColor = "var(--succes-color)";
+    }
+    if (SPEAKING_eng.value.trim() === '0') {
+        SPEAKING_eng.style.borderColor = "var(--error-color)";
+    } else {
+        SPEAKING_eng.style.borderColor = "var(--succes-color)";
+    }
+    if (READING_eng.value.trim() === '0') {
+        READING_eng.style.borderColor = "var(--error-color)";
+    } else {
+        READING_eng.style.borderColor = "var(--succes-color)";
+    }
+    if (WRITING_eng.value.trim() === '0') {
+        WRITING_eng.style.borderColor = "var(--error-color)";
+    } else {
+        WRITING_eng.style.borderColor = "var(--succes-color)";
+    }
+    if (SPEAKING_thai.value.trim() === '0') {
+        SPEAKING_thai.style.borderColor = "var(--error-color)";
+    } else {
+        SPEAKING_thai.style.borderColor = "var(--succes-color)";
+    }
+    if (READING_thai.value.trim() === '0') {
+        READING_thai.style.borderColor = "var(--error-color)";
+    } else {
+        READING_thai.style.borderColor = "var(--succes-color)";
+    }
+    if (WRITING_thai.value.trim() === '0') {
+        WRITING_thai.style.borderColor = "var(--error-color)";
+    } else {
+        WRITING_thai.style.borderColor = "var(--succes-color)";
+    }
+    if (SPEAKING_chin.value.trim() === '0') {
+        SPEAKING_chin.style.borderColor = "var(--error-color)";
+    } else {
+        SPEAKING_chin.style.borderColor = "var(--succes-color)";
+    }
+    if (READING_chin.value.trim() === '0') {
+        READING_chin.style.borderColor = "var(--error-color)";
+    } else {
+        READING_chin.style.borderColor = "var(--succes-color)";
+    }
+    if (WRITING_chin.value.trim() === '0') {
+        WRITING_chin.style.borderColor = "var(--error-color)";
+    } else {
+        WRITING_chin.style.borderColor = "var(--succes-color)";
+    }
+    if (SPEAKING_OTHER.value.trim() === '0') {
+        SPEAKING_OTHER.style.borderColor = "var(--error-color)";
+    } else {
+        SPEAKING_OTHER.style.borderColor = "var(--succes-color)";
+    }
+    if (READING_OTHER.value.trim() === '0') {
+        READING_OTHER.style.borderColor = "var(--error-color)";
+    } else {
+        READING_OTHER.style.borderColor = "var(--succes-color)";
+    }
+    if (WRITING_other.value.trim() === '0') {
+        WRITING_other.style.borderColor = "var(--error-color)";
+    } else {
+        WRITING_other.style.borderColor = "var(--succes-color)";
+    }
+    if (COMPANY_Yes_no.value.trim() === '0') {
+        COMPANY_Yes_no.style.borderColor = "var(--error-color)";
+    } else {
+        COMPANY_Yes_no.style.borderColor = "var(--succes-color)";
+        
+    }
 }
-
-
-
-function checkRequired(inputArr , divs) {
-    
-    inputArr.forEach(function (input) {
-      if (input.value.trim() === '') {
-        showError(input);
-      } else {
-        showSuccess(input);
-      }
-    });
-    divs.forEach(function (div) {
-        if (
-            div.id === "spouse_name_disabled" ||
-            div.id === "PHONE_spouse_disabled" ||
-            div.id === "APPLICATION_disabled" ||
-            div.id === "COMPANY_name_disabled"
-          ) {
-            clearError(div);
-          
-            showNone(div);
-          }
-      }
-      )
-  }
 
 
 
