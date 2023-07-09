@@ -16,7 +16,7 @@ form.addEventListener('submit', function (e) {
     "STATUS_Single",
     "FATHER_status",
     "MOTHER_status",
-    "EMERGENCY_mobile",
+    // "EMERGENCY_mobile",
     "khow_works",
     "SPEAKING_eng",
     "READING_eng",

@@ -97,4 +97,9 @@
   .Padd_GKNN {
     padding-right: 10rem!important;
     padding-left: 10rem!important;
+    background-color: whitesmoke;
+  }
+  .f_GKNN{
+    background-color: whitesmoke;
+    height: 50px;
   }
