@@ -16,7 +16,7 @@
         <div id="bg1">
             <div id="logo"></div>
         </div>
-        <div class="container-fluid px-5">
+        <div class="container-fluid Padd_GKNN bg-secondary.bg-gradient">
             <div id="bg2">
                 <div class="card mb-5">
                     <div class="matop_gknn card-body bg-white">
@@ -66,9 +66,9 @@
                                 <span style="color: red;">*</span>
                                 <h6>SALARY EXPECTED</h6>
                                 <div class="input-group flex-nowrap ">
-                                    <input type="number" class="form-control form-control_gknn" placeholder="0"
+                                    <input type="number" class="form-control form-control_gknn" placeholder="อัตราเงินเดือนที่ต้องการ"
                                         aria-label="Username" id="salary_monny" aria-describedby="addon-wrapping"
-                                        min="0" max="100000">
+                                        min="0" max="100000" onkeydown="preventEnter(event)" >
                                 </div>
 
                             </div>
@@ -78,7 +78,7 @@
                                 <h6>READY TO START DATE</h6>
                                 <div class="input-group flex-nowrap ">
                                     <input type="datetime-local" name="birthdaytime" class="form-control"
-                                        id="start_job">
+                                        id="start_job"  onkeydown="preventEnter(event)">
                                 </div>
                             </div>
                         </div>
@@ -115,7 +115,9 @@
                                 <h6>FULLNAME TH</h6>
                                 <div class="input-group flex-nowrap">
                                     <input type="text" class="form-control" placeholder="FULLNAME TH"
-                                        aria-label="Username" id="fullname_th" aria-describedby="addon-wrapping">
+                                        aria-label="Username" id="fullname_th" aria-describedby="addon-wrapping"
+                                        onkeydown="preventEnter(event)" oninput="validateThaiInput(event) "maxlength="100"
+                                        >
                                 </div>
                             </div>
 
@@ -126,7 +128,8 @@
                                 <h6>FULLNAME EN</h6>
                                 <div class="input-group flex-nowrap">
                                     <input type="text" class="form-control" placeholder="FULLNAME EN"
-                                        aria-label="Username" id="fullname_eng" aria-describedby="addon-wrapping">
+                                        aria-label="Username" id="fullname_eng" aria-describedby="addon-wrapping"
+                                        onkeydown="preventEnter(event)" oninput="validateEnglishInput(event)"maxlength="100">
                                 </div>
                             </div>
                             <div class="col-md-4 col-sm-4 col-xs-12 mb-4">
@@ -135,7 +138,8 @@
                                 <h6>NICK NAME</h6>
                                 <div class="input-group flex-nowrap">
                                     <input type="text" class="form-control" placeholder="NICK NAME"
-                                        aria-label="Username" id="nick_name" aria-describedby="addon-wrapping">
+                                        aria-label="Username" id="nick_name" aria-describedby="addon-wrapping"
+                                        onkeydown="preventEnter(event)">
                                 </div>
                             </div>
                             <div class="col-md-4 col-sm-6 col-xs-12">
@@ -144,7 +148,8 @@
                                 <h6>DATE OF BIRTH</h6>
                                 <div class="input-group flex-nowrap">
                                     <input type="datetime-local" name="birthdaytime" class="form-control"
-                                        id="birthdaytime">
+                                        id="birthdaytime"
+                                        onkeydown="preventEnter(event)">
                                 </div>
                             </div>
                             <div class="col-md-4 col-sm-12 col-xs-12">
@@ -153,7 +158,8 @@
                                 <div class="input-group flex-nowrap">
                                     <input type="text" class="form-control" placeholder="ตัวอย่าง 1ปี"
                                         aria-label="Username" disabled value="โปรดเลือกตัวเกิด" id="age_me"
-                                        aria-describedby="addon-wrapping">
+                                        aria-describedby="addon-wrapping"
+                                        onkeydown="preventEnter(event)">
                                 </div>
                             </div>
                             <div class="col-md-4 col-sm-6 col-xs-12">
@@ -162,7 +168,8 @@
                                 <h6>ID CARD NO. / PASSPORT NO</h6>
                                 <div class="input-group flex-nowrap">
                                     <input type="text" class="form-control" placeholder="ID CARD NO. / PASSPORT NO"
-                                        id="id_card_me" aria-label="Username" aria-describedby="addon-wrapping">
+                                        id="id_card_me" aria-label="Username" aria-describedby="addon-wrapping"
+                                        onkeydown="preventEnter(event)">
                                 </div>
                             </div>
                             <div class="col-md-4 col-sm-6 col-xs-12 mb-4">
@@ -182,16 +189,18 @@
                                 <label>ส่วนสูง</label>
                                 <h6>HEIGHT CM.</h6>
                                 <div class="input-group flex-nowrap">
-                                    <input type="text" class="form-control" placeholder="0" aria-label="Username"
-                                        id="height_me" aria-describedby="addon-wrapping">
+                                    <input type="number" class="form-control" placeholder="0" aria-label="Username"
+                                        id="height_me" aria-describedby="addon-wrapping"
+                                        onkeydown="preventEnter(event)" maxlength="3" >
                                 </div>
                             </div>
                             <div class="col-md-2 col-sm-6 col-xs-12">
                                 <label>น้ำหนัก</label>
                                 <h6>WEIGHT KG.</h6>
                                 <div class="input-group flex-nowrap">
-                                    <input type="text" class="form-control" placeholder="0" aria-label="Username"
-                                        id="kg_me" aria-describedby="addon-wrapping">
+                                    <input type="number" class="form-control" placeholder="0" aria-label="Username"
+                                        id="kg_me" aria-describedby="addon-wrapping" maxlength="3" 
+                                        onkeydown="preventEnter(event)">
                                 </div>
                             </div>
                             <div class="col-md-4 col-sm-6 col-xs-12 mb-4">
@@ -225,7 +234,7 @@
                                 <span style="color: red;">*</span>
                                 <h6>MAILING ADDRESS</h6>
                                 <div class="input-group flex-nowrap">
-                                    <textarea class="form-control" id="ADDRESS_me" rows="3"></textarea>
+                                    <input class="form-control" id="ADDRESS_me" rows="3"></input>
                                 </div>
                             </div>
                             <div class="col-md-4 col-sm-6 col-xs-12 mb-4">
@@ -233,8 +242,9 @@
                                 <span style="color: red;">*</span>
                                 <h6>MOBILE</h6>
                                 <div class="input-group flex-nowrap">
-                                    <input type="text" class="form-control" placeholder="MOBILE" aria-label="Username"
-                                        id="mobile_me" aria-describedby="addon-wrapping">
+                                    <input type="number" class="form-control" placeholder="MOBILE" aria-label="Username"
+                                        id="mobile_me" aria-describedby="addon-wrapping"  maxlength="10"
+                                        onkeydown="preventEnter(event)">
                                 </div>
                             </div>
                             <div class="col-md-4 col-sm-6 col-xs-12 mb-4">
@@ -243,7 +253,8 @@
                                 <h6>EMAIL</h6>
                                 <div class="input-group flex-nowrap">
                                     <input type="email" class="form-control" placeholder="EMAIL" aria-label="Username"
-                                        id="email_me" aria-describedby="addon-wrapping">
+                                        id="email_me" aria-describedby="addon-wrapping"
+                                        onkeydown="preventEnter(event)">
                                 </div>
                             </div>
                             <div class="col-md-4 col-sm-6 col-xs-12 mb-4">
@@ -251,7 +262,8 @@
                                 <h6>FACEBOOK</h6>
                                 <div class="input-group flex-nowrap">
                                     <input type="text" class="form-control" placeholder="FACEBOOK" aria-label="Username"
-                                        id="facebook_me" aria-describedby="addon-wrapping">
+                                        id="facebook_me" aria-describedby="addon-wrapping"
+                                        onkeydown="preventEnter(event)">
                                 </div>
                             </div>
 
@@ -284,7 +296,8 @@
                                 <h6>SPOUSE’S NAME</h6>
                                 <div class="input-group flex-nowrap" id="spouse_name_disabled">
                                     <input type="text" class="form-control" placeholder="" aria-label="Username"
-                                        id="spouse_name" disabled aria-describedby="addon-wrapping" value="">
+                                        id="spouse_name" disabled aria-describedby="addon-wrapping" value=""
+                                        onkeydown="preventEnter(event)">
                                 </div>
                             </div>
                             <div class="col-md-4 col-sm-6 col-xs-12 mb-4">
@@ -292,7 +305,8 @@
                                 <h6>MOBILE PHONE</h6>
                                 <div class="input-group flex-nowrap" id="PHONE_spouse_disabled">
                                     <input type="text" class="form-control" placeholder="" aria-label="Username"
-                                        value="" id="PHONE_spouse" disabled aria-describedby="addon-wrapping">
+                                        value="" id="PHONE_spouse" disabled aria-describedby="addon-wrapping"
+                                        onkeydown="preventEnter(event)">
                                 </div>
                             </div>
                             <div class="col-md-4 col-sm-12 col-xs-12 mb-4">
@@ -300,56 +314,62 @@
                                 <span style="color: red;">*</span>
                                 <h6>NO. OF CHILDREN (IF NO CHILDREN, SPECIFY 0)</h6>
                                 <div class="input-group flex-nowrap">
-                                    <input type="text" class="form-control"
+                                    <input type="number" class="form-control"
                                         placeholder="NO. OF CHILDREN (IF NO CHILDREN, SPECIFY 0)" aria-label="Username"
-                                        id="CHILDREN" aria-describedby="addon-wrapping">
+                                        id="CHILDREN" aria-describedby="addon-wrapping"min="0" max="20"  
+                                        onkeydown="preventEnter(event)" >
                                 </div>
                             </div>
                             <div class="col-md-4 col-sm-6 col-xs-12 mb-4">
                                 <label>อาชีพ</label>
                                 <h6>APPLICATION FORM</h6>
                                 <div class="input-group flex-nowrap" id="APPLICATION_disabled">
-                                    <input type="text" class="form-control" placeholder="" aria-label="Username"
-                                        id="APPLICATION" disabled aria-describedby="addon-wrapping" value="">
+                                    <input type="text" class="form-control" placeholder="อาชีพ" aria-label="Username"
+                                        id="APPLICATION" disabled aria-describedby="addon-wrapping" value=""
+                                        onkeydown="preventEnter(event)">
                                 </div>
                             </div>
                             <div class="col-md-4 col-sm-6 col-xs-12 mb-4">
                                 <label>สถานที่ทำงาน</label>
                                 <h6>COMPANY NAME</h6>
                                 <div class="input-group flex-nowrap" id="COMPANY_name_disabled">
-                                    <input type="text" class="form-control" placeholder="" aria-label="Username"
-                                        value="" id="COMPANY_name" disabled aria-describedby="addon-wrapping">
+                                    <input type="text" class="form-control" placeholder="สถานที่ทำงาน" aria-label="Username"
+                                        value="" id="COMPANY_name" disabled aria-describedby="addon-wrapping"
+                                        onkeydown="preventEnter(event)">
                                 </div>
                             </div>
                             <div class="col-md-4 col-sm-0 col-xs-0 mb-4"></div>
-                            <div class="col-md-4 col-sm-6 col-xs-12 mb-4">
+                            <div class="col-md-4 col-sm-4 col-xs-12 mb-4">
                                 <label>ชื่อบิดา</label>
                                 <span style="color: red;">*</span>
                                 <h6>FATHER’S NAME </h6>
                                 <div class="input-group flex-nowrap">
-                                    <input type="text" class="form-control" placeholder="0" aria-label="Username"
-                                        id="FATHER_name" aria-describedby="addon-wrapping">
+                                    <input type="text" class="form-control" placeholder="ชื่อบิดา" aria-label="Username"
+                                        id="FATHER_name" aria-describedby="addon-wrapping"
+                                        onkeydown="preventEnter(event)">
                                 </div>
                             </div>
-                            <div class="col-md-4 col-sm-6 col-xs-12 mb-4">
+                            <div class="col-md-4 col-sm-4 col-xs-12 mb-4">
                                 <label>อาชีพ</label>
                                 <span style="color: red;">*</span>
                                 <h6>OCCUPATION</h6>
                                 <div class="input-group flex-nowrap">
-                                    <input type="text" class="form-control" placeholder="0" aria-label="Username"
-                                        id="FATHER_occ" aria-describedby="addon-wrapping">
+                                    <input type="text" class="form-control" placeholder="อาชีพ" aria-label="Username"
+                                        id="FATHER_occ" aria-describedby="addon-wrapping"
+                                        onkeydown="preventEnter(event)">
                                 </div>
                             </div>
-                            <div class="col-md-4 col-sm-6 col-xs-12 mb-4">
+                            <div class="col-md-2 col-sm-2 col-xs-12 mb-4">
                                 <label>อายุ</label>
                                 <span style="color: red;">*</span>
                                 <h6>AGE</h6>
                                 <div class="input-group flex-nowrap">
-                                    <input type="text" class="form-control" placeholder="0" aria-label="Username"
-                                        id="FATHER_age" aria-describedby="addon-wrapping">
+                                    <input type="text" class="form-control" placeholder="อายุ" aria-label="Username"
+                                        id="FATHER_age" aria-describedby="addon-wrapping"
+                                        onkeydown="preventEnter(event)">
                                 </div>
                             </div>
-                            <div class="col-md-4 col-sm-6 col-xs-12 mb-4">
+                            <div class="col-md-2 col-sm-2 col-xs-12 mb-4">
                                 <label>สถานภาพ</label>
                                 <span style="color: red;">*</span>
                                 <h6>STATUS</h6>
@@ -360,34 +380,37 @@
                                     <option value="3">Three</option>
                                 </select>
                             </div>
-                            <div class="col-md-4 col-sm-6 col-xs-12 mb-4">
+                            <div class="col-md-4 col-sm-4 col-xs-12 mb-4">
                                 <label>ชื่อมารดา </label>
                                 <span style="color: red;">*</span>
                                 <h6>MATHER’S NAME</h6>
                                 <div class="input-group flex-nowrap">
-                                    <input type="text" class="form-control" placeholder="0" aria-label="Username "
-                                        id="MATHER_name" aria-describedby="addon-wrapping">
+                                    <input type="text" class="form-control" placeholder="ชื่อมารดา" aria-label="Username "
+                                        id="MATHER_name" aria-describedby="addon-wrapping"
+                                        onkeydown="preventEnter(event)">
                                 </div>
                             </div>
-                            <div class="col-md-4 col-sm-6 col-xs-12 mb-4">
+                            <div class="col-md-4 col-sm-4 col-xs-12 mb-4">
                                 <label>อาชีพ</label>
                                 <span style="color: red;">*</span>
                                 <h6>OCCUPATION</h6>
                                 <div class="input-group flex-nowrap">
-                                    <input type="text" class="form-control" placeholder="0" aria-label="Username"
-                                        id="MATHER_occ" aria-describedby="addon-wrapping">
+                                    <input type="text" class="form-control" placeholder="อาชีพ" aria-label="Username"
+                                        id="MATHER_occ" aria-describedby="addon-wrapping"
+                                        onkeydown="preventEnter(event)">
                                 </div>
                             </div>
-                            <div class="col-md-4 col-sm-6 col-xs-12 mb-4">
+                            <div class="col-md-2 col-sm-2 col-xs-12 mb-4">
                                 <label>อายุ</label>
                                 <span style="color: red;">*</span>
                                 <h6>AGE</h6>
                                 <div class="input-group flex-nowrap">
-                                    <input type="text" class="form-control" placeholder="0" aria-label="Username"
-                                        id="MATHER_age" aria-describedby="addon-wrapping">
+                                    <input type="text" class="form-control" placeholder="อายุ" aria-label="Username"
+                                        id="MATHER_age" aria-describedby="addon-wrapping"
+                                        onkeydown="preventEnter(event)">
                                 </div>
                             </div>
-                            <div class="col-md-4 col-sm-6 col-xs-12 mb-4">
+                            <div class="col-md-2 col-sm-2 col-xs-12 mb-4">
                                 <label>สถานภาพ</label>
                                 <span style="color: red;">*</span>
                                 <h6>STATUS</h6>
@@ -413,16 +436,17 @@
                                 </div>
                             </div>
                             <div class="p-sm-4 row">
-                                <div class="col-md-3 col-sm-6 col-xs-12 mb-4">
+                                <div class="col-md-4 col-sm-6 col-xs-12 mb-4">
                                     <label>ชื่อ - นามสกุล</label>
                                     <span style="color: red;">*</span>
                                     <h6>FULLNAME</h6>
                                     <div class="input-group flex-nowrap">
-                                        <input type="text" class="form-control" placeholder="0" aria-label="Username"
-                                            id="EMERGENCY_name" aria-describedby="addon-wrapping">
+                                        <input type="text" class="form-control" placeholder="ชื่อ - นามสกุล" aria-label="Username"
+                                            id="EMERGENCY_name" aria-describedby="addon-wrapping"
+                                            onkeydown="preventEnter(event)">
                                     </div>
                                 </div>
-                                <div class="col-md-3 col-sm-6 col-xs-12 mb-4">
+                                <div class="col-md-4 col-sm-6 col-xs-12 mb-4">
                                     <label>โทรศัพท์</label>
                                     <span style="color: red;">*</span>
                                     <h6>MOBILE PHONE</h6>
@@ -434,13 +458,14 @@
                                         <option value="3">Three</option>
                                     </select>
                                 </div>
-                                <div class="col-md-3 col-sm-12 col-xs-12 mb-4">
+                                <div class="col-md-4 col-sm-12 col-xs-12 mb-4">
                                     <label>ความสัมพันธ์</label>
                                     <span style="color: red;">*</span>
                                     <h6>RELATIONSHIP</h6>
                                     <div class="input-group flex-nowrap">
-                                        <input type="text" class="form-control" placeholder="0" aria-label="Username"
-                                            id="EMERGENCY_relationship" aria-describedby="addon-wrapping">
+                                        <input type="text" class="form-control" placeholder="ความสัมพันธ์" aria-label="Username"
+                                            id="EMERGENCY_relationship" aria-describedby="addon-wrapping"
+                                            onkeydown="preventEnter(event)">
                                     </div>
                                 </div>
                             </div>
@@ -455,50 +480,23 @@
 
                             <div class="p-sm-4 row">
                                 <div class="col-md-6 col-sm-6 col-xs-12 mb-4">
-                                    <label>ท่านรู้จักใครที่เป็นพนักงานอยู่ในบริษัทฯหรือไม่และมีความสัมพันธ์อย่างไร</label>
-                                    <h6>DO YOU KNOW ANYONE WHO WORKS FOR US ?</h6>
+                                  <label>ท่านรู้จักใครที่เป็นพนักงานอยู่ในบริษัทฯหรือไม่และมีความสัมพันธ์อย่างไร</label>
+                                  <h6>DO YOU KNOW ANYONE WHO WORKS FOR US ?</h6>
                                 </div>
-                                <div class="col-md-6 col-sm-6 col-xs-12 mb-4  ">
-                                    <select class="form-select" aria-label="Default select example" id="khow_works">
-                                        <option value="0" selected>Open this select menu</option>
-                                        <option value="1">รู้จัก</option>
-                                        <option value="2">ไม่รู้จัก</option>
-                                    </select>
+                                <div class="col-md-6 col-sm-6 col-xs-12 mb-4">
+                                  <select class="form-select" aria-label="Default select example" id="khow_works" onchange="handleKnowWorksChange()">
+                                    <option value="0" selected>Open this select menu</option>
+                                    <option value="1">รู้จัก</option>
+                                    <option value="2">ไม่รู้จัก</option>
+                                  </select>
                                 </div>
-                            </div>
+                              </div>
+                              
+                           
                         </div>
+                        <div id="todo-WhoWorks"></div>
 
-                        <div class="myDIV" style="display: none;">
-                            <div class="card-body">
-                                <div class="p-sm-4 row">
-                                    <div class="col-12 mb-4">
-                                        <label>โปรดระบุ</label>
-                                        <span style="color: red;">*</span>
-                                        <h6>PLEASE FILL</h6>
-                                        <div class="row">
-                                            <div class="col-md-6 mb-4">
-                                                <label>ชื่อ - นามสกุล</label>
-                                                <h6>FULLNAME</h6>
-                                                <div class="input-group flex-nowrap">
-                                                    <input type="text" class="form-control" placeholder="0"
-                                                        aria-label="Username" value="job-friend-name"
-                                                        id="job-friend-name" aria-describedby="addon-wrapping">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 mb-4">
-                                                <label>โรค</label>
-                                                <h6>DISEASE</h6>
-                                                <div class="input-group flex-nowrap">
-                                                    <input type="text" class="form-control" placeholder="0"
-                                                        aria-label="Username" value=" เช่น พี่"
-                                                        id="job-friend-relationship" aria-describedby="addon-wrapping">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                   
                         <!--  -->
                     </div>
                 </div>
@@ -528,9 +526,10 @@
                                     <label>โรค</label>
                                     <h6>DISEASE</h6>
                                     <div class="input-group flex-nowrap">
-                                        <input type="text" class="form-control" placeholder="0" aria-label="Username"
-                                            disabled id="DISEASE1" value="เช่น โรคเบาหวาน"
-                                            aria-describedby="addon-wrapping">
+                                        <input type="text" class="form-control" placeholder="โรค" aria-label="Username"
+                                            disabled id="DISEASE1" value=""
+                                            aria-describedby="addon-wrapping"
+                                            onkeydown="preventEnter(event)">
                                     </div>
                                 </div>
                                 <div class="col-md-4 col-sm-6 col-xs-12 mb-4">
@@ -546,9 +545,10 @@
                                     <label>โรค</label>
                                     <h6>DISEASE</h6>
                                     <div class="input-group flex-nowrap">
-                                        <input type="text" class="form-control" placeholder="0" aria-label="Username"
-                                            disabled id="DISEASE2" value="เช่น เลือดจาง"
-                                            aria-describedby="addon-wrapping">
+                                        <input type="text" class="form-control" placeholder="โรค" aria-label="Username"
+                                            disabled id="DISEASE2" value=""
+                                            aria-describedby="addon-wrapping"
+                                            onkeydown="preventEnter(event)">
                                     </div>
                                 </div>
                                 <div class="col-md-4 col-sm-6 col-xs-12 mb-4">
@@ -564,9 +564,10 @@
                                     <label>โรค</label>
                                     <h6>DISEASE</h6>
                                     <div class="input-group flex-nowrap">
-                                        <input type="text" class="form-control" placeholder="0" aria-label="Username"
-                                            disabled id="DISEASE3" value="เช่น รถล้ม "
-                                            aria-describedby="addon-wrapping">
+                                        <input type="text" class="form-control" placeholder="โรค" aria-label="Username"
+                                            disabled id="DISEASE3" value=""
+                                            aria-describedby="addon-wrapping"
+                                            onkeydown="preventEnter(event)">
                                     </div>
                                 </div>
                             </div>
@@ -593,6 +594,7 @@
                                     </div>
                                 </div>
                             </div>
+                            <ul id="todo-Record"></ul>
 
                             <div class="p-sm-4 row">
 
@@ -632,13 +634,7 @@
                                 <ul id="todo-list"></ul>
                             </div>
                         </div>
-                        <section class="Show">
-                            <div class="container">
-                                <div id="showlist">
-
-                                </div>
-                            </div>
-                        </section>
+                       
 
                     </div>
                 </div>
@@ -812,8 +808,9 @@
                                         <label>อื่นๆ</label>
                                         <h6>OTHER LANGUAGES</h6>
                                         <div class="input-group flex-nowrap">
-                                            <input class="form-control mb-4" type="text" value="อื่นๆ"
-                                                aria-label="readonly input example" readonly>
+                                            <input class="form-control mb-4" type="text" value=""
+                                                aria-label="readonly input example" id="OTHER_languahes"
+                                                onkeydown="preventEnter(event)">
                                         </div>
                                     </div>
                                     <div
@@ -899,9 +896,10 @@
                                         <div class=" flex-nowrap col-md-12 col-sm-8 col-xs-12 d-flex flex-column ">
                                             <label>เลขที่ใบขับขี่</label>
                                             <h6>No.</h6>
-                                            <input type="text" class="form-control" placeholder="0"
-                                                aria-label="Username" id="numcar" value="เช่น กข 1410"
-                                                aria-describedby="addon-wrapping" disabled>
+                                            <input type="text" class="form-control" placeholder="เลขที่ใบขับขี่"
+                                                aria-label="Username" id="numcar" value=""
+                                                aria-describedby="addon-wrapping" disabled
+                                                onkeydown="preventEnter(event)">
                                         </div>
                                     </div>
                                     <div class="row p-5">
@@ -919,9 +917,10 @@
                                         <div class=" flex-nowrap col-md-12 col-sm-8 col-xs-12 d-flex flex-column ">
                                             <label>เลขที่ใบขับขี่</label>
                                             <h6>No.</h6>
-                                            <input type="text" class="form-control" placeholder="0"
+                                            <input type="text" class="form-control" placeholder="เลขที่ใบขับขี่"
                                                 aria-label="Username" aria-describedby="addon-wrapping" id="numcar2"
-                                                disabled value="เช่น กข 1410">
+                                                disabled value=""
+                                                onkeydown="preventEnter(event)">
                                         </div>
                                     </div>
                                 </div>
@@ -957,45 +956,50 @@
                                         <label>ชื่อ - นามสกุล</label>
                                         <h6>FULLNAME</h6>
                                         <div class="input-group flex-nowrap">
-                                            <input type="text" class="form-control" placeholder="0"
+                                            <input type="text" class="form-control" placeholder="ชื่อ - นามสกุล"
                                                 aria-label="Username" id="PERSONAL_name"
-                                                aria-describedby="addon-wrapping">
+                                                aria-describedby="addon-wrapping"
+                                                onkeydown="preventEnter(event)">
                                         </div>
                                     </div>
                                     <div class="col-md-4 col-sm-4 col-xs-6 mb-3">
                                         <label>ความสัมพันธ์</label>
                                         <h6>RELATIONSHIP</h6>
                                         <div class="input-group flex-nowrap">
-                                            <input type="text" class="form-control" placeholder="0"
+                                            <input type="text" class="form-control" placeholder="ความสัมพันธ์"
                                                 aria-label="Username" id="RELATIONSHIP_personal"
-                                                aria-describedby="addon-wrapping">
+                                                aria-describedby="addon-wrapping"
+                                                onkeydown="preventEnter(event)">
                                         </div>
                                     </div>
                                     <div class="col-md-4 col-sm-4 col-xs-6 mb-3">
                                         <label>สถานที่ทำงาน</label>
                                         <h6>COMPANY NAME</h6>
                                         <div class="input-group flex-nowrap">
-                                            <input type="text" class="form-control" placeholder="0"
+                                            <input type="text" class="form-control" placeholder="สถานที่ทำงาน"
                                                 aria-label="Username" id="COMPANY_name"
-                                                aria-describedby="addon-wrapping">
+                                                aria-describedby="addon-wrapping"
+                                                onkeydown="preventEnter(event)">
                                         </div>
                                     </div>
                                     <div class="col-md-4 col-sm-4 col-xs-6 mb-3">
                                         <label>ตำแหน่ง</label>
                                         <h6>POSITION</h6>
                                         <div class="input-group flex-nowrap">
-                                            <input type="text" class="form-control" placeholder="0"
+                                            <input type="text" class="form-control" placeholder="ตำแหน่ง"
                                                 aria-label="Username" id="POSITION_name"
-                                                aria-describedby="addon-wrapping">
+                                                aria-describedby="addon-wrapping"
+                                                onkeydown="preventEnter(event)">
                                         </div>
                                     </div>
                                     <div class="col-md-4 col-sm-4 col-xs-6 mb-3">
                                         <label>เบอร์โทรศัพท์</label>
                                         <h6>MOBILE PHONE</h6>
                                         <div class="input-group flex-nowrap">
-                                            <input type="text" class="form-control" placeholder="0"
+                                            <input type="text" class="form-control" placeholder="เบอร์โทรศัพท์"
                                                 aria-label="Username" id="POSITION_MOBILE"
-                                                aria-describedby="addon-wrapping">
+                                                aria-describedby="addon-wrapping"
+                                                onkeydown="preventEnter(event)">
                                         </div>
                                     </div>
                                 </div>
@@ -1010,48 +1014,51 @@
                                         <label>ชื่อ - นามสกุล</label>
                                         <h6>FULLNAME</h6>
                                         <div class="input-group flex-nowrap">
-                                            <input type="text" class="form-control" placeholder="0"
+                                            <input type="text" class="form-control" placeholder="ชื่อ - นามสกุล"
                                                 aria-label="Username" id="PERSONAL_name2"
-                                                aria-describedby="addon-wrapping">
+                                                aria-describedby="addon-wrapping"
+                                                onkeydown="preventEnter(event)">
                                         </div>
                                     </div>
                                     <div class="col-md-4 col-sm-4 col-xs-6 mb-3">
                                         <label>ความสัมพันธ์</label>
                                         <h6>RELATIONSHIP</h6>
                                         <div class="input-group flex-nowrap">
-                                            <input type="text" class="form-control" placeholder="0"
+                                            <input type="text" class="form-control" placeholder="ความสัมพันธ์"
                                                 aria-label="Username" id="RELATIONSHIP_personal2"
-                                                aria-describedby="addon-wrapping">
+                                                aria-describedby="addon-wrapping"
+                                                onkeydown="preventEnter(event)">
                                         </div>
                                     </div>
                                     <div class="col-md-4 col-sm-4 col-xs-6 mb-3">
                                         <label>สถานที่ทำงาน</label>
                                         <h6>COMPANY NAME</h6>
                                         <div class="input-group flex-nowrap">
-                                            <input type="text" class="form-control" placeholder="0"
+                                            <input type="text" class="form-control" placeholder="สถานที่ทำงาน"
                                                 aria-label="Username" id="COMPANY_name2"
-                                                aria-describedby="addon-wrapping">
+                                                aria-describedby="addon-wrapping"
+                                                onkeydown="preventEnter(event)">
                                         </div>
                                     </div>
                                     <div class="col-md-4 col-sm-4 col-xs-6 mb-3">
                                         <label>ตำแหน่ง</label>
                                         <h6>POSITION</h6>
                                         <div class="input-group flex-nowrap">
-                                            <input type="text" class="form-control" placeholder="0"
+                                            <input type="text" class="form-control" placeholder="ตำแหน่ง"
                                                 aria-label="Username" id="POSITION_name2"
-                                                aria-describedby="addon-wrapping">
+                                                aria-describedby="addon-wrapping"
+                                                onkeydown="preventEnter(event)">
                                         </div>
                                     </div>
                                     <div class=" col-md-4 col-sm-4 col-xs-6 mb-3">
                                         <label>เบอร์โทรศัพท์</label>
                                         <h6>MOBILE PHONE</h6>
                                         <div class="form-control-gknn input-group flex-nowrap">
-                                            <input type="text" class="form-control" placeholder="0"
+                                            <input type="text" class="form-control" placeholder="เบอร์โทรศัพท์"
                                                 aria-label="Username" id="POSITION_MOBILE"
-                                                aria-describedby="addon-wrapping">
+                                                aria-describedby="addon-wrapping"
+                                                onkeydown="preventEnter(event)">
                                         </div>
-                                        <small>Error Message</small>
-
                                     </div>
                                 </div>
                             </div>
