@@ -66,9 +66,9 @@
                                 <span style="color: red;">*</span>
                                 <h6>SALARY EXPECTED</h6>
                                 <div class="input-group flex-nowrap ">
-                                    <input type="number" class="form-control form-control_gknn" placeholder="อัตราเงินเดือนที่ต้องการ"
-                                        aria-label="Username" id="salary_monny" aria-describedby="addon-wrapping"
-                                        min="0" max="100000" onkeydown="preventEnter(event)" >
+                                    <input type="text" class="form-control form-control_gknn" placeholder="อัตราเงินเดือนที่ต้องการ"
+                                        aria-label="Username" id="salary_monny" aria-describedby="addon-wrapping" oninput="numberOnly(this.id)"  minlength="0" maxlength="6" 
+                                   onkeydown="preventEnter(event)" >
                                 </div>
 
                             </div>
@@ -77,7 +77,7 @@
                                 <span style="color: red;">*</span>
                                 <h6>READY TO START DATE</h6>
                                 <div class="input-group flex-nowrap ">
-                                    <input type="datetime-local" name="birthdaytime" class="form-control"
+                                    <input type="date" name="birthdaytime" class="form-control" 
                                         id="start_job"  onkeydown="preventEnter(event)">
                                 </div>
                             </div>
@@ -116,11 +116,9 @@
                                 <div class="input-group flex-nowrap">
                                     <input type="text" class="form-control" placeholder="FULLNAME TH"
                                         aria-label="Username" id="fullname_th" aria-describedby="addon-wrapping"
-                                        onkeydown="preventEnter(event)" oninput="validateThaiInput(event) "maxlength="100"
-                                        >
+                                        onkeydown="preventEnter(event)" oninput="validateThaiInput(event)">
                                 </div>
                             </div>
-
                             <div class="col-md-4 col-sm-4 col-xs-0"></div>
                             <div class="col-md-8 col-sm-7 col-xs-12 mb-4">
                                 <label> ชื่อ - นามสกุล (ภาษาอังกฤษ) </label>
@@ -129,7 +127,7 @@
                                 <div class="input-group flex-nowrap">
                                     <input type="text" class="form-control" placeholder="FULLNAME EN"
                                         aria-label="Username" id="fullname_eng" aria-describedby="addon-wrapping"
-                                        onkeydown="preventEnter(event)" oninput="validateEnglishInput(event)"maxlength="100">
+                                        onkeydown="preventEnter(event)" oninput="validateEnglishInput(event)">
                                 </div>
                             </div>
                             <div class="col-md-4 col-sm-4 col-xs-12 mb-4">
@@ -147,9 +145,8 @@
                                 <span style="color: red;">*</span>
                                 <h6>DATE OF BIRTH</h6>
                                 <div class="input-group flex-nowrap">
-                                    <input type="datetime-local" name="birthdaytime" class="form-control"
-                                        id="birthdaytime"
-                                        onkeydown="preventEnter(event)">
+                                    <input type="date" name="birthdaytime" class="form-control"
+                                        id="birthdaytime" onkeydown="preventEnter(event)">
                                 </div>
                             </div>
                             <div class="col-md-4 col-sm-12 col-xs-12">
@@ -189,17 +186,17 @@
                                 <label>ส่วนสูง</label>
                                 <h6>HEIGHT CM.</h6>
                                 <div class="input-group flex-nowrap">
-                                    <input type="number" class="form-control" placeholder="0" aria-label="Username"
-                                        id="height_me" aria-describedby="addon-wrapping"
-                                        onkeydown="preventEnter(event)" maxlength="3" >
+                                    <input type="text" class="form-control" placeholder="0" aria-label="Username"
+                                        id="height_me" aria-describedby="addon-wrapping"  oninput="numberOnly(this.id)" minlength="0" maxlength="3"
+                                        onkeydown="preventEnter(event)" >
                                 </div>
                             </div>
                             <div class="col-md-2 col-sm-6 col-xs-12">
                                 <label>น้ำหนัก</label>
                                 <h6>WEIGHT KG.</h6>
                                 <div class="input-group flex-nowrap">
-                                    <input type="number" class="form-control" placeholder="0" aria-label="Username"
-                                        id="kg_me" aria-describedby="addon-wrapping" maxlength="3" 
+                                    <input type="text" class="form-control" placeholder="0" aria-label="Username"
+                                        id="kg_me" aria-describedby="addon-wrapping" oninput="numberOnly(this.id)" minlength="0" maxlength="3"
                                         onkeydown="preventEnter(event)">
                                 </div>
                             </div>
@@ -242,8 +239,8 @@
                                 <span style="color: red;">*</span>
                                 <h6>MOBILE</h6>
                                 <div class="input-group flex-nowrap">
-                                    <input type="number" class="form-control" placeholder="MOBILE" aria-label="Username"
-                                        id="mobile_me" aria-describedby="addon-wrapping"  maxlength="10"
+                                    <input type="text" class="form-control" placeholder="MOBILE" aria-label="Username"
+                                        id="mobile_me" aria-describedby="addon-wrapping"  oninput="numberOnly(this.id)" minlength="0" maxlength="10" pattern="[0-9]{10}"
                                         onkeydown="preventEnter(event)">
                                 </div>
                             </div>
@@ -295,7 +292,7 @@
                                 <label>ชื่อคู่สมรส</label>
                                 <h6>SPOUSE’S NAME</h6>
                                 <div class="input-group flex-nowrap" id="spouse_name_disabled">
-                                    <input type="text" class="form-control" placeholder="" aria-label="Username"
+                                    <input type="text" class="form-control" placeholder="ชื่อคู่สมรส" aria-label="Username"
                                         id="spouse_name" disabled aria-describedby="addon-wrapping" value=""
                                         onkeydown="preventEnter(event)">
                                 </div>
@@ -304,7 +301,7 @@
                                 <label>เบอร์โทรศัพท์</label>
                                 <h6>MOBILE PHONE</h6>
                                 <div class="input-group flex-nowrap" id="PHONE_spouse_disabled">
-                                    <input type="tel" class="form-control" placeholder="" aria-label="Username" pattern="[0-9]{10}" maxlength="10"
+                                    <input type="tel" class="form-control" placeholder="เบอร์โทรศัพท์" aria-label="Username" oninput="numberOnly(this.id)"  minlength="0" maxlength="10" pattern="[0-9]{10}"
                                         value="" id="PHONE_spouse" disabled aria-describedby="addon-wrapping"
                                         onkeydown="preventEnter(event)">
                                 </div>
@@ -314,9 +311,9 @@
                                 <span style="color: red;">*</span>
                                 <h6>NO. OF CHILDREN (IF NO CHILDREN, SPECIFY 0)</h6>
                                 <div class="input-group flex-nowrap">
-                                    <input type="number" class="form-control"
+                                    <input type="text" class="form-control"
                                         placeholder="NO. OF CHILDREN (IF NO CHILDREN, SPECIFY 0)" aria-label="Username"
-                                        id="CHILDREN" aria-describedby="addon-wrapping"min="0" max="20"  
+                                        id="CHILDREN" aria-describedby="addon-wrapping" oninput="numberOnly(this.id)"  minlength="0" maxlength="2" 
                                         onkeydown="preventEnter(event)" >
                                 </div>
                             </div>
@@ -346,7 +343,7 @@
                                 <div class="input-group flex-nowrap">
                                     <input type="text" class="form-control" placeholder="ชื่อบิดา" aria-label="Username"
                                         id="FATHER_name" aria-describedby="addon-wrapping"
-                                        onkeydown="preventEnter(event)" oninput="validateThaiInput(event)">
+                                        onkeydown="preventEnter(event)" >
                                 </div>
                             </div>
                             <div class="col-md-4 col-sm-4 col-xs-12 mb-4">
@@ -355,7 +352,7 @@
                                 <h6>OCCUPATION</h6>
                                 <div class="input-group flex-nowrap">
                                     <input type="text" class="form-control" placeholder="อาชีพ" aria-label="Username"
-                                        id="FATHER_occ" aria-describedby="addon-wrapping"oninput="validateThaiInput(event)"
+                                        id="FATHER_occ" aria-describedby="addon-wrapping"
                                         onkeydown="preventEnter(event)">
                                 </div>
                             </div>
@@ -365,7 +362,7 @@
                                 <h6>AGE</h6>
                                 <div class="input-group flex-nowrap">
                                     <input type="text" class="form-control" placeholder="อายุ" aria-label="Username"
-                                        id="FATHER_age" aria-describedby="addon-wrapping"oninput="validateThaiInput(event)"
+                                        id="FATHER_age" aria-describedby="addon-wrapping" oninput="numberOnly(this.id)"  minlength="0" maxlength="3" 
                                         onkeydown="preventEnter(event)">
                                 </div>
                             </div>
@@ -375,9 +372,8 @@
                                 <h6>STATUS</h6>
                                 <select class="form-select" aria-label="Default select example" id="FATHER_status">
                                     <option value="0" selected>Open this select menu</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
+                                    <option value="1">มีชีวิต (Live)</option>
+                                    <option value="2">ถึงแก่กรรม (Deceased)</option>
                                 </select>
                             </div>
                             <div class="col-md-4 col-sm-4 col-xs-12 mb-4">
@@ -386,7 +382,7 @@
                                 <h6>MATHER’S NAME</h6>
                                 <div class="input-group flex-nowrap">
                                     <input type="text" class="form-control" placeholder="ชื่อมารดา" aria-label="Username "
-                                        id="MATHER_name" aria-describedby="addon-wrapping" oninput="validateThaiInput(event)"
+                                        id="MATHER_name" aria-describedby="addon-wrapping" 
                                         onkeydown="preventEnter(event)">
                                 </div>
                             </div>
@@ -396,7 +392,7 @@
                                 <h6>OCCUPATION</h6>
                                 <div class="input-group flex-nowrap">
                                     <input type="text" class="form-control" placeholder="อาชีพ" aria-label="Username"
-                                        id="MATHER_occ" aria-describedby="addon-wrapping" oninput="validateThaiInput(event)"
+                                        id="MATHER_occ" aria-describedby="addon-wrapping" 
                                         onkeydown="preventEnter(event)">
                                 </div>
                             </div>
@@ -405,8 +401,8 @@
                                 <span style="color: red;">*</span>
                                 <h6>AGE</h6>
                                 <div class="input-group flex-nowrap">
-                                    <input type="number" class="form-control" placeholder="อายุ" aria-label="Username"
-                                        id="MATHER_age" aria-describedby="addon-wrapping" min="0" max="120" 
+                                    <input type="text" class="form-control" placeholder="อายุ" aria-label="Username"
+                                        id="MATHER_age" aria-describedby="addon-wrapping" oninput="numberOnly(this.id)"  minlength="0" maxlength="3" 
                                         onkeydown="preventEnter(event)">
                                 </div>
                             </div>
@@ -416,9 +412,8 @@
                                 <h6>STATUS</h6>
                                 <select class="form-select" aria-label="Default select example" id="MOTHER_status">
                                     <option value="0" selected>Open this select menu</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
+                                    <option value="1">มีชีวิต (Live)</option>
+                                    <option value="2">ถึงแก่กรรม (Deceased)</option>
                                 </select>
                             </div>
                         </div>
@@ -442,7 +437,7 @@
                                     <h6>FULLNAME</h6>
                                     <div class="input-group flex-nowrap">
                                         <input type="text" class="form-control" placeholder="ชื่อ - นามสกุล" aria-label="Username"
-                                            id="EMERGENCY_name" aria-describedby="addon-wrapping" oninput="validateThaiInput(event)"
+                                            id="EMERGENCY_name" aria-describedby="addon-wrapping" 
                                             onkeydown="preventEnter(event)">
                                     </div>
                                 </div>
@@ -451,8 +446,8 @@
                                     <span style="color: red;">*</span>
                                     <h6>MOBILE PHONE</h6>
                                     <div class="input-group flex-nowrap">
-                                        <input type="number" class="form-control" placeholder="โทรศัพท์" aria-label="Username"
-                                            id="EMERGENCY_mobile" aria-describedby="addon-wrapping" min="0" max="9999999999"
+                                        <input type="text" class="form-control" placeholder="โทรศัพท์" aria-label="Username"
+                                            id="EMERGENCY_mobile" aria-describedby="addon-wrapping" oninput="numberOnly(this.id)"  minlength="0" maxlength="10" pattern="[0-9]{10}"
                                             onkeydown="preventEnter(event)">
                                     </div>
                                 </div>
@@ -462,7 +457,7 @@
                                     <h6>RELATIONSHIP</h6>
                                     <div class="input-group flex-nowrap">
                                         <input type="text" class="form-control" placeholder="ความสัมพันธ์" aria-label="Username"
-                                            id="EMERGENCY_relationship" aria-describedby="addon-wrapping" oninput="validateThaiInput(event)"
+                                            id="EMERGENCY_relationship" aria-describedby="addon-wrapping" 
                                             onkeydown="preventEnter(event)">
                                     </div>
                                 </div>
@@ -526,7 +521,7 @@
                                     <div class="input-group flex-nowrap">
                                         <input type="text" class="form-control" placeholder="โรค" aria-label="Username"
                                             disabled id="DISEASE1" value=""
-                                            aria-describedby="addon-wrapping" oninput="validateThaiInput(event)"
+                                            aria-describedby="addon-wrapping" 
                                             onkeydown="preventEnter(event)">
                                     </div>
                                 </div>
@@ -545,7 +540,7 @@
                                     <div class="input-group flex-nowrap">
                                         <input type="text" class="form-control" placeholder="โรค" aria-label="Username"
                                             disabled id="DISEASE2" value=""
-                                            aria-describedby="addon-wrapping" oninput="validateThaiInput(event)"
+                                            aria-describedby="addon-wrapping" 
                                             onkeydown="preventEnter(event)">
                                     </div>
                                 </div>
@@ -564,7 +559,7 @@
                                     <div class="input-group flex-nowrap">
                                         <input type="text" class="form-control" placeholder="โรค" aria-label="Username"
                                             disabled id="DISEASE3" value=""
-                                            aria-describedby="addon-wrapping" oninput="validateThaiInput(event)"
+                                            aria-describedby="addon-wrapping" 
                                             onkeydown="preventEnter(event)">
                                     </div>
                                 </div>
@@ -575,40 +570,34 @@
                 </div>
                 <!-- ..................... -->
                 <div class="card mb-5">
-                    <div class=" mt-4 container-fluid bg-white">
-                        <div class="p-sm-4 ">
-
-                            <div class="p-sm-4 head_con2 border-bottom">
-                                <div class="row">
-                                    <div class="col-md-8 col-sm-8 col-xs-8 mb-4">
-                                        <label>ประวัติการศึกษา</label>
-                                        <span style="color: red;"> (ระบุได้สูงสุด 2 วุฒิการศึกษา)</span>
-                                        <h6>EDUCATION</h6>
-                                    </div>
-                                    <div class="col d-flex justify-content-end mb-4">
-                                        <button type="submit" class="btn btn-outline-medeze " id="addTrainingRecord">
-                                            Add
-                                            Former</button>
-                                    </div>
-                                </div>
+                    <div class="mt-4 container-fluid bg-white">
+                      <div class="p-sm-4">
+                        <div class="p-sm-4 head_con2 border-bottom">
+                          <div class="row">
+                            <div class="col-md-8 col-sm-8 col-xs-8 mb-4">
+                              <label>ประวัติการศึกษา</label>
+                              <span style="color: red;"> (ระบุได้สูงสุด 2 วุฒิการศึกษา)</span>
+                              <h6>EDUCATION</h6>
                             </div>
-                            <ul id="todo-Record"></ul>
-
-                            <div class="p-sm-4 row">
-
-                                <div class="col-12 mb-4">
-                                    <label>กิจกรรมระหว่างการศึกษา (ถ้ามี)</label>
-                                    <h6>EXTRA CURRICULAR ACTIVITIES</h6>
-                                    <div class="input-group flex-nowrap">
-                                        <textarea class="form-control" id="CURRICULAR_ACTIVITIES" rows="4" ></textarea>
-                                    </div>
-                                </div>
-
+                            <div class="col d-flex justify-content-end mb-4">
+                              <button type="submit" class="btn btn-outline-medeze" id="Record_form1">Add Former</button>
                             </div>
+                          </div>
                         </div>
+                        <ul id="todo-Record"></ul>
+                        <div class="p-sm-4 row">
+                          <div class="col-12 mb-4">
+                            <label>กิจกรรมระหว่างการศึกษา (ถ้ามี)</label>
+                            <h6>EXTRA CURRICULAR ACTIVITIES</h6>
+                            <div class="input-group flex-nowrap">
+                              <textarea class="form-control" id="CURRICULAR_ACTIVITIES" rows="4"></textarea>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-
-                </div>
+                  </div>
+                  
                 <!-- ...... -->
                 <div class="card mb-5">
                     <div class=" mt-4 container-fluid bg-white">
@@ -862,7 +851,7 @@
                                         <label>ความสามารถพิเศษ</label>
                                         <h6>SPECIALIST SKILL</h6>
                                         <div class="input-group flex-nowrap">
-                                            <textarea class="form-control col-12" id="SKILL_me" rows="7" oninput="validateThaiInput(event)"></textarea>
+                                            <textarea class="form-control col-12" id="SKILL_me" rows="7"></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -895,7 +884,7 @@
                                             <h6>MOTORCYCLES</h6>
                                             <input type="text" class="form-control" placeholder="เลขที่ใบขับขี่"
                                                 aria-label="Username" id="numcar" value=""
-                                                aria-describedby="addon-wrapping" disabled oninput="validateThaiInput(event)"
+                                                aria-describedby="addon-wrapping" disabled oninput="numberOnly(this.id)"  minlength="0" maxlength="10" 
                                                 onkeydown="preventEnter(event)">
                                         </div>
                                     </div>
@@ -917,7 +906,7 @@
                                             <label>เลขที่ใบขับขี่</label>
                                             <h6>No.</h6>
                                             <input type="text" class="form-control" placeholder="เลขที่ใบขับขี่"
-                                                aria-label="Username" aria-describedby="addon-wrapping" id="numcar2" oninput="validateThaiInput(event)"
+                                                aria-label="Username" aria-describedby="addon-wrapping" id="numcar2" oninput="numberOnly(this.id)"  minlength="0" maxlength="10" 
                                                 disabled value=""
                                                 onkeydown="preventEnter(event)">
                                         </div>
@@ -959,7 +948,7 @@
                                         <div class="input-group flex-nowrap">
                                             <input type="text" class="form-control" placeholder="ชื่อ - นามสกุล"
                                                 aria-label="Username" id="PERSONAL_name"
-                                                aria-describedby="addon-wrapping" oninput="validateThaiInput(event)"
+                                                aria-describedby="addon-wrapping"
                                                 onkeydown="preventEnter(event)">
                                         </div>
                                     </div>
@@ -970,7 +959,7 @@
                                         <div class="input-group flex-nowrap">
                                             <input type="text" class="form-control" placeholder="ความสัมพันธ์"
                                                 aria-label="Username" id="RELATIONSHIP_personal"
-                                                aria-describedby="addon-wrapping" oninput="validateThaiInput(event)"
+                                                aria-describedby="addon-wrapping" 
                                                 onkeydown="preventEnter(event)"> 
                                         </div>
                                     </div>
@@ -1002,8 +991,8 @@
                                         <h6>MOBILE PHONE</h6>
                                         <div class="input-group flex-nowrap">
                                             <input type="tel" class="form-control" placeholder="เบอร์โทรศัพท์"
-                                                aria-label="Username" id="POSITION_MOBILE" pattern="[0-9]{10}"
-                                                aria-describedby="addon-wrapping"  maxlength="10"
+                                                aria-label="Username" id="POSITION_MOBILE" 
+                                                aria-describedby="addon-wrapping"  oninput="numberOnly(this.id)"  minlength="0" maxlength="10" pattern="[0-9]{10}"
                                                 onkeydown="preventEnter(event)">
                                         </div>
                                     </div>
@@ -1022,7 +1011,7 @@
                                         <div class="input-group flex-nowrap">
                                             <input type="text" class="form-control" placeholder="ชื่อ - นามสกุล"
                                                 aria-label="Username" id="PERSONAL_name2"
-                                                aria-describedby="addon-wrapping" oninput="validateThaiInput(event)"
+                                                aria-describedby="addon-wrapping" 
                                                 onkeydown="preventEnter(event)">
                                         </div>
                                     </div>
@@ -1033,7 +1022,7 @@
                                         <div class="input-group flex-nowrap">
                                             <input type="text" class="form-control" placeholder="ความสัมพันธ์"
                                                 aria-label="Username" id="RELATIONSHIP_personal2"
-                                                aria-describedby="addon-wrapping" oninput="validateThaiInput(event)"
+                                                aria-describedby="addon-wrapping" 
                                                 onkeydown="preventEnter(event)">
                                         </div>
                                     </div>
@@ -1066,7 +1055,7 @@
                                         <div class="form-control-gknn input-group flex-nowrap">
                                             <input type="text" class="form-control" placeholder="เบอร์โทรศัพท์"
                                                 aria-label="Username" id="POSITION_MOBILE"
-                                                aria-describedby="addon-wrapping" pattern="[0-9]{10}" maxlength="10"
+                                                aria-describedby="addon-wrapping" oninput="numberOnly(this.id)"  minlength="0" maxlength="10" pattern="[0-9]{10}"
                                                 onkeydown="preventEnter(event)">
                                         </div>
                                     </div>
@@ -1099,7 +1088,7 @@
                                 </div>
                                 <div class="col-7 mt-4">
                                     <div class="input-group flex-nowrap">
-                                        <input class="form-control" type="file" id="formFile1">
+                                        <input class="form-control" type="file" id="formFile1" accept=".jpg, .jpeg, .png" onchange="validateFileSize(event)">
                                     </div>
                                 </div>
                                 <div class="col-5 mt-4">
@@ -1108,7 +1097,7 @@
                                 </div>
                                 <div class="col-7 mt-4">
                                     <div class="input-group flex-nowrap">
-                                        <input class="form-control" type="file" id="formFile2">
+                                        <input class="form-control" type="file" id="formFile2" accept=".jpg, .jpeg, .png" onchange="validateFileSize(event)">
                                     </div>
                                 </div>
                                 <div class="col-5 mt-4">
@@ -1117,7 +1106,7 @@
                                 </div>
                                 <div class="col-7 mt-4">
                                     <div class="input-group flex-nowrap">
-                                        <input class="form-control" type="file" id="formFile3">
+                                        <input class="form-control" type="file" id="formFile3" accept=".jpg, .jpeg, .png" onchange="validateFileSize(event)">
                                     </div>
                                 </div>
                                 <div class="col-5 mt-4">
@@ -1126,7 +1115,7 @@
                                 </div>
                                 <div class="col-7 mt-4">
                                     <div class="input-group flex-nowrap">
-                                        <input class="form-control" type="file" id="formFile4">
+                                        <input class="form-control" type="file" id="formFile4" accept=".jpg, .jpeg, .png" onchange="validateFileSize(event)">
                                     </div>
                                 </div>
                                 <div class="col-5 mt-4">
@@ -1135,7 +1124,7 @@
                                 </div>
                                 <div class="col-7 mt-4">
                                     <div class="input-group flex-nowrap">
-                                        <input class="form-control" type="file" id="formFile5">
+                                        <input class="form-control" type="file" id="formFile5" accept=".jpg, .jpeg, .png" onchange="validateFileSize(event)">
                                     </div>
                                 </div>
                                 <div class="col-5 mt-4">
@@ -1143,7 +1132,7 @@
                                 </div>
                                 <div class="col-7 mt-4">
                                     <div class="input-group flex-nowrap">
-                                        <input class="form-control" type="file" id="formFile6">
+                                        <input class="form-control" type="file" id="formFile6" accept=".jpg, .jpeg, .png" onchange="validateFileSize(event)">
                                     </div>
                                 </div>
                                 <div class="col-5 mt-4">
@@ -1151,7 +1140,7 @@
                                 </div>
                                 <div class="col-7 mt-4">
                                     <div class="input-group flex-nowrap">
-                                        <input class="form-control" type="file" id="formFile7">
+                                        <input class="form-control" type="file" id="formFile7" accept=".jpg, .jpeg, .png" onchange="validateFileSize(event)">
                                     </div>
                                 </div>
                                 <div class="col-5 mt-4">
@@ -1159,7 +1148,7 @@
                                 </div>
                                 <div class="col-7 mt-4">
                                     <div class="input-group flex-nowrap">
-                                        <input class="form-control" type="file" id="formFile8">
+                                        <input class="form-control" type="file" id="formFile8" accept=".jpg, .jpeg, .png" onchange="validateFileSize(event)">
                                     </div>
                                 </div>
                                 <div class="col-5 mt-4">
@@ -1167,7 +1156,7 @@
                                 </div>
                                 <div class="col-7 mt-4">
                                     <div class="input-group flex-nowrap">
-                                        <input class="form-control" type="file" id="formFile9">
+                                        <input class="form-control" type="file" id="formFile9" accept=".jpg, .jpeg, .png" onchange="validateFileSize(event)">
                                     </div>
                                 </div>
                                 <div class="col-5 mt-4">
@@ -1175,7 +1164,7 @@
                                 </div>
                                 <div class="col-7 mt-4">
                                     <div class="input-group flex-nowrap">
-                                        <input class="form-control" type="file" id="formFile10">
+                                        <input class="form-control" type="file" id="formFile10" accept=".jpg, .jpeg, .png" onchange="validateFileSize(event)">
                                     </div>
                                 </div>
                             </div>

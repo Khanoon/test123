@@ -1,6 +1,7 @@
 #form .row{
     --bs-gutter-x: unset !important;
   }
+
   *{
     font-family: 'Kanit', sans-serif;
   }

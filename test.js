@@ -292,3 +292,89 @@ function deleteTodo(index) {
   todoItemsContainer.removeChild(todoItem); 
   clickCount=0; 
 }
+
+
+
+let clickCount = 0;
+document.addEventListener('DOMContentLoaded', function () {
+  const btn_from1 = document.getElementById('Record_form1');
+  const todoList = document.getElementById('todo-Record');
+
+  let todoItems = [];
+  let count_numid = 0;
+
+  btn_from1.addEventListener('click', function (event) {
+    event.preventDefault(); 
+
+    if (clickCount < 2) {
+      const todoItem = document.createElement('div');
+      count_numid++;
+      clickCount++;
+      // todoItem.setAttribute('id', `Record-${count_numid}`);
+      todoItem.id = `Record-${count_numid}`;
+      console.log(clickCount);
+      const html = `
+        <div class="row pt-4 px-4">
+          <h6 class="col-10">TRAINING, OTHER</h6>
+          <button class="col-1 btn-outline-medeze btn" onclick="deleteTodo(${count_numid})">Delete</button>
+     
+        <div class="row p-3">
+          <div class="col-md-4 col-sm-6 col-xs-3">
+            <label>วุฒิการศึกษา</label>
+            <h6>DEGREE RECEIVED</h6>
+            <div class="input-group flex-nowrap">
+              <input type="text" class="form-control" placeholder="" aria-label="Username" id="sda-${count_numid}" value="" aria-describedby="addon-wrapping">
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 col-xs-3">
+            <label>สถาบันการศึกษา</label>
+            <h6>INSTITUTE</h6>
+            <div class="input-group flex-nowrap">
+              <input type="text" class="form-control" placeholder="" aria-label="Username" id="sad2-${count_numid}" value="" aria-describedby="addon-wrapping">
+            </div>
+          </div>
+          <div class="col-md-2 col-sm-6 col-xs-3">
+            <label>สาขาวิชา</label>
+            <h6>SUBJECT STUDIED</h6>
+            <div class="input-group flex-nowrap">
+              <input type="text" class="form-control" placeholder="" aria-label="Username" id="sad3-${count_numid}" value="" aria-describedby="addon-wrapping">
+            </div>
+          </div>
+          <div class="col-md-2 col-sm-6 col-xs-3">
+            <label>จบปีการศึกษา (ปี)</label>
+            <h6>END OF EDUCATION (YEAR)</h6>
+            <div class="input-group flex-nowrap">
+              <input type="datetime-local" name="birthdaytime" class="form-control" id="end_EDUCATION-${count_numid}" onkeydown="preventEnter(event)">
+            </div>
+          </div>
+        </div>
+        </div>
+      `;
+      todoItem.innerHTML = html;
+      todoList.appendChild(todoItem);
+    } 
+    // low2(clickCount);
+  });
+});
+function deleteTodo(index) {
+  const todoItem = document.getElementById(`Record-${index}`);
+  const todoItemsContainer = todoItem.parentNode;
+  todoItemsContainer.removeChild(todoItem);
+  clickCount--;
+  console.log(clickCount);
+
+}
+// function low2(clickCount) {
+//   console.log(clickCount);
+//   if (clickCount<2) {
+//     console.log('XD');
+//     Record_form1.disabled = true;
+//   } else{
+//     console.log("asd");
+//     Record_form1.disabled = false;
+
+//   }
+// }
+
+
+

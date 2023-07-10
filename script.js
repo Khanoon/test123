@@ -16,7 +16,7 @@ form.addEventListener('submit', function (e) {
     "STATUS_Single",
     "FATHER_status",
     "MOTHER_status",
-    // "EMERGENCY_mobile",
+    "EMERGENCY_mobile",
     "khow_works",
     "SPEAKING_eng",
     "READING_eng",
@@ -105,9 +105,9 @@ document.getElementById("khow_works").addEventListener("change", function (event
   let divContainer = document.querySelector(".myDIV");
 
   if (maritalStatus === "1") {
-    divContainer.style.display = " block";  // Show the divContainer
+    divContainer.style.display = " block";  
   } else {
-    divContainer.style.display = "none";   // Hide the divContainer
+    divContainer.style.display = "none";  
   }
 });
 
@@ -298,230 +298,239 @@ function addToLocalStorage(key, value) {
 }
 //   ..................FormMax-3
 // เปิด-เปิดการเช็คบล็อกสำหรับ id_car2
+let clickCount3 = 0;
+
 document.addEventListener('DOMContentLoaded', function () {
   const btn_from1 = document.getElementById('btn_from1');
   const todoList1 = document.getElementById('todo-list');
-  window.todoItems1 = [];
-  window.clickCount1 = 0;
+  const todoItems1 = [];
 
   btn_from1.addEventListener('click', function (event) {
     event.preventDefault();
 
-    if (clickCount1 < 3) {
-      const todoItem = document.createElement('div');
-
+    if (clickCount3 < 3) {
+      const todoItem3 = document.createElement('div');
+      const todoItemId = `XD-${clickCount3 + 1}`;
+      clickCount3++;
+      todoItem3.id = todoItemId;
       const html = `
-          <div class="row pt-4 px-4" id="XD-${clickCount1}">
+          <div class="row pt-4 px-4" id="XD-${todoItemId}">
             <h6 class="col-10">TRAINING, OTHER</h6>
-            <button class="btn btn-outline-medeze col-1" onclick="deleteXD(${clickCount1})">Delete</button>
+            <button class="btn btn-outline-medeze col-1" onclick="deleteXD('${todoItemId}')">Delete</button>
           </div>
           <div class="row p-4">
             <div class="col-4">
               <label>สถาบัน/บริษัท</label>
               <h6>INSTITUTE/COMPANY</h6>
               <div class="input-group flex-nowrap">
-                <input type="text" class="form-control" placeholder="" aria-label="Username" id="Record" value="" aria-describedby="addon-wrapping">
+                <input type="text" class="form-control" placeholder="" aria-label="Username" id="XD1${todoItemId}" value="" aria-describedby="addon-wrapping" onkeydown="preventEnter(event)">
               </div>
             </div>
             <div class="col-4">
               <label>รายละเอียด</label>
               <h6>DESCRIPTION</h6>
               <div class="input-group flex-nowrap">
-                <input type="text" class="form-control" placeholder="" aria-label="Username" id="Record2" value="" aria-describedby="addon-wrapping">
+                <input type="text" class="form-control" placeholder="" aria-label="Username" id="XD2${todoItemId}" value="" aria-describedby="addon-wrapping" onkeydown="preventEnter(event)">
               </div>
             </div>
             <div class="col-4">
               <label>ระยะเวลาการฝึกอบรม</label>
               <h6>DURATION OF COURSE</h6>
               <div class="input-group flex-nowrap">
-                <input type="text" class="form-control" placeholder="" aria-label="Username" id="Record3" value="" aria-describedby="addon-wrapping">
+              <input type="date" name="birthdaytime" class="form-control"
+              id="XD3${todoItemId}" onkeydown="preventEnter(event)">
               </div>
             </div>
           </div>`;
 
-      todoItem.innerHTML = html;
-      window.todoItems1.push(todoItem);
-      todoList1.appendChild(todoItem);
-
-      clickCount1++;
+      todoItem3.innerHTML = html;
+      todoItems1.push(todoItemId);
+      todoList1.appendChild(todoItem3);
     }
   });
 });
 
-function deleteXD(index) {
-  const todoList1 = document.getElementById('todo-list');
-  const todoItem = window.todoItems1[index];
-
-  if (todoItem && todoItem.parentNode === todoList1) {
-    todoList1.removeChild(todoItem);
-    window.todoItems1.splice(index, 1);
-    window.clickCount1--;
-  }
+function deleteXD(todoItemId) {
+  const todoItem3 = document.getElementById(todoItemId);
+  const todoItemsContainer = todoItem3.parentNode;
+  todoItemsContainer.removeChild(todoItem3);
+  clickCount3--;
 }
 
 
 
 // 
+let clickCount1 = 0;
+
 document.addEventListener('DOMContentLoaded', function () {
   const btn_from1 = document.getElementById('btn_from2');
   const todoList1 = document.getElementById('todo-list1');
-  window.todoItems1 = [];
-  window.clickCount1 = 0;
 
   btn_from1.addEventListener('click', function (event) {
     event.preventDefault();
 
     if (clickCount1 < 3) {
       const todoItem = document.createElement('div');
+      const todoItemId = `sad-${clickCount1 + 1}`;
+      clickCount1++;
+      todoItem.id = todoItemId;
 
       const html = `
-      <div class="row pt-4 px-4" id="XD-${clickCount1}">
-      <h6 class="col-10">TRAINING, OTHER</h6>
-      <button class="btn btn-outline-medeze col-1" onclick="deleteTodo1(${clickCount1})">Delete</button>
-    </div>
+          <div class="row pt-4 px-4" id="XD-${todoItemId}">
+            <h6 class="col-10">TRAINING, OTHER</h6>
+            <button class="btn btn-outline-medeze col-1" onclick="deleteTodo1('${todoItemId}')">Delete</button>
+          </div>
           <div class="row p-4">
             <div class="col-md-2 col-sm-4 col-xs-4">
               <label>สถานที่ประกอบการ</label>
               <h6>COMPANY</h6>
               <div class="input-group flex-nowrap">
-                <input type="text" class="form-control" placeholder="" aria-label="Username" id="from2_1" value=" " aria-describedby="addon-wrapping">
+                <input type="text" class="form-control" placeholder="" aria-label="Username" id="from2_1${todoItemId}" value=" " aria-describedby="addon-wrapping" onkeydown="preventEnter(event)">
               </div>
             </div>
             <div class="col-md-2 col-sm-4 col-xs-4">
               <label>ตำแหน่ง</label>
               <h6>POSITION</h6>
               <div class="input-group flex-nowrap">
-                <input type="text" class="form-control" placeholder="" aria-label="Username" id="from2_3" value=" " aria-describedby="addon-wrapping">
+                <input type="text" class="form-control" placeholder="" aria-label="Username" id="from2_3${todoItemId}" value=" " aria-describedby="addon-wrapping" onkeydown="preventEnter(event)">
               </div>
             </div>
             <div class="col-md-2 col-sm-4 col-xs-4">
               <label>วันที่เริ่มงาน</label>
               <h6>START DATE</h6>
               <div class="input-group flex-nowrap">
-              <input type="datetime-local" name="birthdaytime" class="form-control"
-              id="birthdaytime_F"
-              onkeydown="preventEnter(event)">
+                <input type="date" name="birthdaytime" class="form-control" id="birthdaytime_F${todoItemId}" onkeydown="preventEnter(event)">
               </div>
             </div>
             <div class="col-md-2 col-sm-4 col-xs-4">
-            <label>วันที่สิ้นสุด</label>
-            <h6>FINISH DATE</h6>
-            <div class="input-group flex-nowrap">
-            <input type="datetime-local" name="birthdaytime" class="form-control"
-            id="birthdaytime_L"
-            onkeydown="preventEnter(event)">
+              <label>วันที่สิ้นสุด</label>
+              <h6>FINISH DATE</h6>
+              <div class="input-group flex-nowrap">
+                <input type="date" name="birthdaytime" class="form-control" id="birthdaytime_L${todoItemId}" onkeydown="preventEnter(event)">
+              </div>
             </div>
-          </div>
-          <div class="col-md-2 col-sm-4 col-xs-4">
-          <label>เงินเดือน</label>
-          <h6>SALARY</h6>
-          <div class="input-group flex-nowrap">
-            <input type="text" class="form-control" placeholder="" aria-label="Username" id="from2_3" value=" " aria-describedby="addon-wrapping">
-          </div>
-        </div>
-        <div class="col-md-2 col-sm-4 col-xs-4">
-        <label>สาเหตุที่ออก</label>
-        <h6>REASON FOR LEAVING</h6>
-        <div class="input-group flex-nowrap">
-          <input type="text" class="form-control" placeholder="" aria-label="Username" id="from2_4" value=" " aria-describedby="addon-wrapping">
-        </div>
-      </div>
+            <div class="col-md-2 col-sm-4 col-xs-4">
+              <label>เงินเดือน</label>
+              <h6>SALARY</h6>
+              <div class="input-group flex-nowrap">
+                <input type="text" class="form-control" placeholder="" aria-label="Username" id="from2_3${todoItemId}" value=" " aria-describedby="addon-wrapping oninput="numberOnly(this.id)"  minlength="0" maxlength="6" pattern="[0-9]{10}"  onkeydown="preventEnter(event)">
+              </div>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-4">
+              <label>สาเหตุที่ออก</label>
+              <h6>REASON FOR LEAVING</h6>
+              <div class="input-group flex-nowrap">
+                <input type="text" class="form-control" placeholder="" aria-label="Username" id="from2_4${todoItemId}" value=" " aria-describedby="addon-wrapping" onkeydown="preventEnter(event)">
+              </div>
+            </div>
           </div>`;
 
       todoItem.innerHTML = html;
-      window.todoItems1.push(todoItem);
       todoList1.appendChild(todoItem);
-
-      clickCount1++;
     }
   });
 });
 
-function deleteTodo1(index) {
-  const todoList1 = document.getElementById('todo-list1');
-  const todoItem = window.todoItems1[index];
-
-  if (todoItem instanceof Node) {
-    todoList1.removeChild(todoItem);
-    window.todoItems1.splice(index, 1);
-    window.clickCount1--;
-  }
+function deleteTodo1(todoItemId) {
+  const todoItem = document.getElementById(todoItemId);
+  const todoItemsContainer = todoItem.parentNode;
+  todoItemsContainer.removeChild(todoItem);
+  clickCount1--;
 }
+
 // ..............
+let clickCount = 0;
 document.addEventListener('DOMContentLoaded', function () {
-  const btn_from1 = document.getElementById('addTrainingRecord');
+  const btn_from1 = document.getElementById('Record_form1');
   const todoList = document.getElementById('todo-Record');
-  window.todoItems = [];
-  window.clickCount = 0;
+
+  let todoItems = [];
+  let count_numid = 0;
 
   btn_from1.addEventListener('click', function (event) {
-    event.preventDefault(); // Prevent form submission
+    event.preventDefault(); 
 
     if (clickCount < 2) {
       const todoItem = document.createElement('div');
-
+      count_numid++;
+      clickCount++;
+      // todoItem.setAttribute('id', `Record-${count_numid}`);
+      todoItem.id = `Record-${count_numid}`;
+      console.log(clickCount);
       const html = `
-        <div class="row pt-4 px-4" id="Record-${clickCount}">
+        <div class="row pt-4 px-4">
           <h6 class="col-10">TRAINING, OTHER</h6>
-          <button class="col-1 btn-outline-medeze btn" onclick="deleteTodo(${clickCount})">Delete</button>
-        </div>
+          <button class="col-1 btn-outline-medeze btn" onclick="deleteTodo(${count_numid})">Delete</button>
+     
         <div class="row p-3">
           <div class="col-md-4 col-sm-6 col-xs-3">
-            <label>วุฒิการศึกษา </label>
+            <label>วุฒิการศึกษา</label>
             <h6>DEGREE RECEIVED</h6>
             <div class="input-group flex-nowrap">
-              <input type="text" class="form-control" placeholder="" aria-label="Username" id="sda" value=" " aria-describedby="addon-wrapping">
+              <input type="text" class="form-control" placeholder="" aria-label="Username" id="sda-${count_numid}" value="" aria-describedby="addon-wrapping" onkeydown="preventEnter(event)">
             </div>
           </div>
           <div class="col-md-4 col-sm-6 col-xs-3">
             <label>สถาบันการศึกษา</label>
             <h6>INSTITUTE</h6>
             <div class="input-group flex-nowrap">
-              <input type="text" class="form-control" placeholder="" aria-label="Username" id="sad2" value=" " aria-describedby="addon-wrapping">
+              <input type="text" class="form-control" placeholder="" aria-label="Username" id="sad2-${count_numid}" value="" aria-describedby="addon-wrapping" onkeydown="preventEnter(event)">
             </div>
           </div>
           <div class="col-md-2 col-sm-6 col-xs-3">
             <label>สาขาวิชา</label>
             <h6>SUBJECT STUDIED</h6>
             <div class="input-group flex-nowrap">
-              <input type="text" class="form-control" placeholder="" aria-label="Username" id="sad3" value=" " aria-describedby="addon-wrapping">
+              <input type="text" class="form-control" placeholder="" aria-label="Username" id="sad3-${count_numid}" value="" aria-describedby="addon-wrapping" onkeydown="preventEnter(event)">
             </div>
           </div>
           <div class="col-md-2 col-sm-6 col-xs-3">
-            <label>จบปีการศึกษา (ปี) </label>
+            <label>จบปีการศึกษา (ปี)</label>
             <h6>END OF EDUCATION (YEAR)</h6>
             <div class="input-group flex-nowrap">
-            <input type="datetime-local" name="birthdaytime" class="form-control"
-            id="end_EDUCATION "  onkeydown="preventEnter(event)">
+              <input type="date" name="birthdaytime" class="form-control" id="end_EDUCATION-${count_numid}" onkeydown="preventEnter(event)">
             </div>
           </div>
         </div>
-        `;
-
+        </div>
+      `;
       todoItem.innerHTML = html;
-      window.todoItems.push(todoItem);
       todoList.appendChild(todoItem);
-
-      clickCount++;
-    }
+    } 
+    // low2(clickCount);
   });
 });
-
 function deleteTodo(index) {
-  const todoItemsContainer = document.getElementById('todo-Record');
-  const todoItem = todoItemsContainer.children[index];
+  const todoItem = document.getElementById(`Record-${index}`);
+  const todoItemsContainer = todoItem.parentNode;
   todoItemsContainer.removeChild(todoItem);
-  clickCount = 0;
+  clickCount--;
+  console.log(clickCount);
+
 }
+// function low2(clickCount) {
+//   console.log(clickCount);
+//   if (clickCount<2) {
+//     console.log('XD');
+//     Record_form1.disabled = true;
+//   } else{
+//     console.log("asd");
+//     Record_form1.disabled = false;
+
+//   }
+// }
+
+
+
 
 // ..........
 document.addEventListener('DOMContentLoaded', function () {
   const todoList = document.getElementById('todo-WhoWorks');
-  window.todoItems = [];
-  window.clickCount = 0;
+  todoItems = [];
+  clickCount = 0;
 
   function addTrainingItem() {
-    if (clickCount < 3) {
+    if (clickCount < 2) {
       const todoItem = document.createElement('div');
       todoItem.id = `XD-${clickCount}`;
       todoItem.className = 'myDIV';
@@ -560,7 +569,7 @@ document.addEventListener('DOMContentLoaded', function () {
           </div>`;
 
       todoItem.innerHTML = html;
-      window.todoItems.push(todoItem);
+      todoItems.push(todoItem);
       todoList.appendChild(todoItem);
 
       clickCount++;
@@ -584,10 +593,10 @@ function handleKnowWorksChange() {
 function clearTrainingItems() {
   const todoList = document.getElementById('todo-WhoWorks');
   todoList.innerHTML = '';
-  window.todoItems = [];
-  window.clickCount = 0;
+  odoItems = [];
+  clickCount = 0;
 }
-// ......................................เสริม........................................
+// // ......................................เสริม........................................
 
 function preventEnter(event) {
   if (event.keyCode === 13) {
@@ -595,6 +604,7 @@ function preventEnter(event) {
     event.preventDefault();
   }
 }
+
 function validateThaiInput(event) {
   const input = event.target;
   const thaiPattern = /^[\u0E00-\u0E7F\s]+$/; // รูปแบบของภาษาไทย
@@ -612,7 +622,45 @@ function validateEnglishInput(event) {
     input.value = input.value.replace(/[^A-Za-z\s]+/g, '');
   }
 }
+function numberOnly(elementId) {
+  return true;
+  // const inputElement = document.getElementById(elementId);
+  // // inputElement.addEventListener('input', function(event) {
+  //   let inputValue = event.target.value;
+  //   const sanitizedValue = inputValue.replace(/[^0-9]/g, '');
+  //   console.log(event.target.value = sanitizedValue)
+  // // });
+  
+  // // inputElement.addEventListener('keydown', function(event) {
+  //   const keyCode = event.keyCode || event.which;
+  //   if ((keyCode < 48 || keyCode > 57) 
+  //   // && keyCode !== 8 
+  //   // && keyCode !== 9 
+  //   // && keyCode !== 37 
+  //   // && keyCode !== 39 
+  //   && keyCode !==96 
+  //   && keyCode !== 97 
+  //   && keyCode !==98  
+  //   && keyCode !==99  
+  //   && keyCode !==100
+  //   && keyCode !==101&& keyCode !==102&& keyCode !==103&& keyCode !==104&& keyCode !==105) {
+  //     event.preventDefault();
+  //   }
+  // });
+}
+function validateFileSize(event) {
+  const fileInput = event.target;
+  const files = fileInput.files;
 
+  if (files.length > 0) {
+    const maxSize = 2 * 1024 * 1024; // 2MB  https://stackoverflow.com/questions/5697605/limit-the-size-of-a-file-upload-html-input-element
+    const fileSize = files[0].size;
+    if (fileSize > maxSize) {
+      alert('File size exceeds the maximum limit of 2MB.');
+      fileInput.value = ''; 
+    }
+  }
+}
 // ...........อายุ
 function calculateAge(birthday) {
   var today = new Date(); //วันปัจจุบัน
